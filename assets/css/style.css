@@ -8,31 +8,31 @@
 }
 
 .bg-color-three-reasons {
-    background-color: #fff;
+    background: #fff;
 }
 
 .bg-color-personal-info {
-    background-color: #f4f4f4;
+    background: #f4f4f4;
 }
 
 .bg-color-work-history {
-    background-color: #9b59b6;
+    background:#8b9d91;
 }
 
 .ui-menu-color-home  {
-    background-color: #e67e22;
+    background: #8b9d91;
 }
 
 .ui-menu-color-resume  {
-    background-color: #9b59b6;
+    background: #EC8F5E;
 }
 
 .ui-menu-color-contact {
-    background-color: #3498db
+    background: #8b9d91;
 }
 
 .ui-menu-color-download {
-    background-color: #525252
+    background: #EC8F5E;
 }
 
 /*--------------------------------------------Special paddings/margins/text */
@@ -275,6 +275,27 @@ footer {
 .progress-section {
     margin: 40px 20px;
 }
+
+.progress-1 {
+    background: #EC8F5E;
+}
+
+.progress-2 {
+    background: #8b9d91;
+}
+
+.progress-3 {
+    background: #EC8F5E;
+}
+
+.progress-4 {
+    background: #8b9d91;
+}
+
+.progress-5 {
+    background: #EC8F5E;
+}
+
 
 /*--------------------------------------------Work History */
 
