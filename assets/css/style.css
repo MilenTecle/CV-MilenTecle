@@ -28,15 +28,15 @@
 }
 
 .ui-menu-color-resume  {
-    background: #EC8F5E;
+    background: #4c6453;
 }
 
 .ui-menu-color-contact {
-    background: #8b9d91;
+    background: #EC8F5E;
 }
 
 .ui-menu-color-download {
-    background: #EC8F5E;
+    background: #b29483;
 }
 
 /*--------------------------------------------Special paddings/margins/text */
@@ -281,7 +281,7 @@ footer {
 }
 
 .progress-1 {
-    background: #EC8F5E;
+    background: #4c6453;
 }
 
 .progress-2 {
@@ -293,11 +293,11 @@ footer {
 }
 
 .progress-4 {
-    background: #8b9d91;
+    background: #b29483;
 }
 
 .progress-5 {
-    background: #EC8F5E;
+    background: #4f4037;
 }
 
 
@@ -376,6 +376,6 @@ button[type="submit"] {
         padding-top: 30px;
         min-height: 240px;
         margin: 0 auto;
-        max-width: 50%;
+        max-width: 40%;
     }
 }
