@@ -37,8 +37,10 @@ function repoInformationHTML(repos) {
 
 
 function fetchGitHubInformation(event) {
+    $("#gh-user-data").html("");
+    $("#gh-repo-data").html("");
 
-    var username = $("#gh-username").val();
+    const username = $("#gh-username").val();
     if (!username) {
         $("#gh-user-data").html(`<h2>Please enter a GitHub username</h2>`);
         return;
@@ -49,9 +51,21 @@ function fetchGitHubInformation(event) {
             <img src="assets/css/loader.gif" alt="loading..." />
         </div>`);
 
-$.when(
-    $.getJSON(`https://api.github.com/users/${username}`),
-    $.getJSON(`https://api.github.com/users/${username}/repos`),
+    const headers = {
+     Authorization: "Bearer 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",
+    };
+
+    $.when(
+        $.ajax({
+            url: `https://api.github.com/users/${username}`,
+            headers: headers,
+            dataType: 'json',
+        }),
+        $.ajax({
+            url: `https://api.github.com/users/${username}/repos`,
+            headers: headers,
+            dataType: 'json',
+        })
 ).then(
     function(firstResponse, secondResponse) {
         const userData = firstResponse[0];
@@ -63,10 +77,14 @@ $.when(
         if (errorResponse.status === 404) {
             $("#gh-user-data").html(
                 `<h2>No info found for user ${username}</h2>`);
-        } else {
-            console.log(errorResponse);
-            $("#gh-user-data").html(
-                `<h2>Error: ${errorResponse.responseJSON.message}</h2>`);
+        } else if(errorResponse.status === 403) {
+            const resetTime = new Date(errorResponse.getResponseHeader('X-RateLimit-Reset')*1000);
+            $("#gh-user-data").html(`<h4>Too many requests, please wait until ${resetTime.toLocaleDateString()}</h4>`);
+                console.log(errorResponse);
+                $("#gh-user-data").html(
+                    `<h2>Error: ${errorResponse.responseJSON.message}</h2>`);
         }
     });
 }
+
+$(document).ready(fetchGitHubInformation);
