@@ -8,7 +8,10 @@ function sendMail(contactForm) {
         function(response) {
             console.log("SUCCESS", response);
             contactForm.reset();
-            alert("Email sent successfully!");
+
+            const alertMessage = document.getElementById("alert-message");
+            alertMessage.classList.remove('hide');
+            alertMessage.classList.add('alert', 'alert-success');
         },
         function(error) {
             console.log("FAILED", error);

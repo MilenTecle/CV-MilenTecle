@@ -366,7 +366,7 @@ footer .cv-pdf i:hover {
     margin: 25px 0 20px;
 }
 
-.center-form {
+.center-form, .alert {
     padding-top: 10px;
     margin: 0 auto;
     max-width: 70%;
@@ -384,6 +384,12 @@ div#map {
     min-height: 360px;
 }
 
+/*--------------------------------------------Alert*/
+
+.hide {
+    display: none;
+}
+
 
 /*--------------------------------------------Media Queries */
 
@@ -392,6 +398,9 @@ div#map {
         padding-top: 30px;
         min-height: 240px;
         margin: 0 auto;
+        max-width: 40%;
+    }
+    .alert {
         max-width: 40%;
     }
 }
