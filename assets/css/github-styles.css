@@ -109,6 +109,8 @@ img {
 
 .repo-list ul {
   font-size: 1.2em;
+  padding: 0;
+  margin: 0;
 }
 
 .repo-list ul li {
